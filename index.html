@@ -5,19 +5,19 @@
     <title>Page Professionnelle Améliorée</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Inclure Vue.js depuis un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
-
-
 <body>
 <header>
     <div class="container_header">
         <div>
-            <h1 class="title"> Mon Entreprise</h1>
+            <h1 class="title">Mon Entreprise</h1>
             <nav>
                 <ul>
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#Services">Services</a></li>
-                    <li><a href="#A propos">A propos </a></li>
+                    <li><a href="#A propos">A propos</a></li>
                     <li><a href="#Blog">Blog</a></li>
                     <li><a href="#Galerie">Galerie</a></li>
                     <li><a href="#Contact">Contact</a></li>
@@ -28,21 +28,21 @@
 </header>
 
 <section class="Bienvenu">
-    <div class ="container">
+    <div class="container">
         <h2>Bienvenue sur notre site professionnel</h2>
-        <p>Nous offrons une gamme complète de services pour répondre à tous vos beosins en matière de développement web</p>
+        <p>Nous offrons une gamme complète de services pour répondre à tous vos besoins en matière de développement web.</p>
     </div>
 </section>
 
 <section class="Qui_somme_nous">
-    <div class ="container">
+    <div class="container">
         <h2>Qui sommes-nous</h2>
-        <p>Notre équipe est composée de professionnels expérimentés dans le domaine du développment web, du design, et de la stratégie digitale.</p>
+        <p>Notre équipe est composée de professionnels expérimentés dans le domaine du développement web, du design, et de la stratégie digitale.</p>
     </div>
 </section>
 
 <section class="Nos_service" id="Services">
-    <div class ="container">
+    <div class="container">
         <h2>Nos Services</h2>
         <div class="products-grid">
             <div class="product-item">
@@ -66,17 +66,17 @@
         <h2>Notre équipe</h2>
         <div class="team_grid">
             <div class="team">
-                <img src="image_random2.jpg" alt="Jean_Dupont_PP" class="PP">
+                <img src="image_random2.jpg" alt="Jean Dupont" class="PP">
                 <h3>Jean Dupont</h3>
                 <p>Développeur Web Senior</p>
             </div>
             <div class="team">
-                <img src="image_random.jpg" alt="Marie_Curie_PP" class="PP">
+                <img src="image_random.jpg" alt="Marie Curie" class="PP">
                 <h3>Marie Curie</h3>
                 <p>Designer UX/UI</p>
             </div>
             <div class="team">
-                <img src="image_random3.jpg" alt="Luc_Martin_PP" class="PP">
+                <img src="image_random3.jpg" alt="Luc Martin" class="PP">
                 <h3>Luc Martin</h3>
                 <p>Consultant Marketing</p>
             </div>
@@ -87,18 +87,18 @@
 <section class="Temoignages">
     <div class="container">
         <h2>Témoignages</h2>
-            <div class="Temoignage">
-                <p class="citation">"Mon Entreprise a transformé notre présence en ligne. Leur équipe est exceptionnelle!"</p>
-                <p class="auteur">- Client Satisfait</p>
-            </div>
-            <div class="Temoignage">
-                <p class="citation">"Des services de haute qualité et un support client incroyable."</p>
-                <p class="auteur">- Entreprise XYZ</p>
-            </div>
-            <div class="Temoignage">
-                <p class="citation">"Nous recommandons fortement Mon Entreprise pour tous vos besoins numériques."</p>
-                <p class="auteur">- Startup ABC</p>
-            </div>
+        <div class="Temoignage">
+            <p class="citation">"Mon Entreprise a transformé notre présence en ligne. Leur équipe est exceptionnelle!"</p>
+            <p class="auteur">- Client Satisfait</p>
+        </div>
+        <div class="Temoignage">
+            <p class="citation">"Des services de haute qualité et un support client incroyable."</p>
+            <p class="auteur">- Entreprise XYZ</p>
+        </div>
+        <div class="Temoignage">
+            <p class="citation">"Nous recommandons fortement Mon Entreprise pour tous vos besoins numériques."</p>
+            <p class="auteur">- Startup ABC</p>
+        </div>
     </div>
 </section>
 
@@ -125,19 +125,16 @@
     </div>
 </section>
 
+<!-- Section FAQ avec Vue.js -->
 <section class="faq">
-    <div class="faq_titre"> <h2>FAQ</h2></div>
-    <div class="faq-item">
-        <p class="question">Q: Quels services offrez-vous?</p>
-        <p class="reponse">R: Nous offrons le développement web, le design UX/UI, le marketing digital, et la consultation technique.</p>
-    </div>
-    <div class="faq-item">
-        <p class="question">Q: Comment puis-je vous contacter?</p>
-        <p class="reponse">R: Vous pouvez nous contacter via le formulaire de contact sur notre site ou par téléphone au 01 23 45 67 89.</p>
-    </div>
-    <div class="faq-item">
-        <p class="question">Q: Quels sont vos tarifs?</p>
-        <p class="reponse">R: Nos tarifs sont compétitifs et adaptés à chaque projet. Contactez-nous pour un devis personnalisé.</p>
+    <div class="faq_titre"><h2>FAQ</h2></div>
+    <div id="faq-app">
+        <div class="faq-item" v-for="(item, index) in faqItems" :key="index">
+            <button class="question" @click="toggleAnswer(index)" class="faq-question">
+                {{ item.question }}
+            </button>
+            <p class="reponse" v-if="item.showAnswer">{{ item.answer }}</p>
+        </div>
     </div>
 </section>
 
@@ -153,55 +150,66 @@
     </div>
 </section>
 
+<!-- Section Formulaire de Contact avec Vue.js -->
 <section class="contact-form" id="Contact">
     <h2>Contactez-nous</h2>
-    <form action="#" method="post">
-        <div class="form-group">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Adresse e-mail :</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-            <label for="subject">Sujet :</label>
-            <input type="text" id="subject" name="subject" required>
-        </div>
-
-        <div class="form-group">
-            <label>Genre :</label>
-            <div>
-                <input type="radio" id="homme" name="genre" value="homme">
-                <label for="homme">Homme</label>
+    <div id="contact-app">
+        <div class="success" v-if="successMessage">{{ successMessage }}</div>
+        <form @submit.prevent="submitForm">
+            <div class="form-group">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" v-model="form.name" required>
+                <span class="error" v-if="errors.name">{{ errors.name }}</span>
             </div>
-            <div>
-                <input type="radio" id="femme" name="genre" value="femme">
-                <label for="femme">Femme</label>
+
+            <div class="form-group">
+                <label for="email">Adresse e-mail :</label>
+                <input type="email" id="email" v-model="form.email" required>
+                <span class="error" v-if="errors.email">{{ errors.email }}</span>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="country">Pays :</label>
-            <select id="country" name="country">
-                <option value="france">France</option>
-                <option value="belgique">Belgique</option>
-                <option value="suisse">Suisse</option>
-                <option value="canada">Canada</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="subject">Sujet :</label>
+                <input type="text" id="subject" v-model="form.subject" required>
+                <span class="error" v-if="errors.subject">{{ errors.subject }}</span>
+            </div>
 
-        <div class="form-group">
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
+            <div class="form-group">
+                <label>Genre :</label>
+                <div>
+                    <input type="radio" id="homme" value="homme" v-model="form.genre">
+                    <label for="homme">Homme</label>
+                </div>
+                <div>
+                    <input type="radio" id="femme" value="femme" v-model="form.genre">
+                    <label for="femme">Femme</label>
+                </div>
+                <span class="error" v-if="errors.genre">{{ errors.genre }}</span>
+            </div>
 
-        <div class="form-group">
-            <button type="submit">Envoyer</button>
-        </div>
-    </form>
+            <div class="form-group">
+                <label for="country">Pays :</label>
+                <select id="country" v-model="form.country">
+                    <option value="">--Sélectionnez un pays--</option>
+                    <option value="france">France</option>
+                    <option value="belgique">Belgique</option>
+                    <option value="suisse">Suisse</option>
+                    <option value="canada">Canada</option>
+                </select>
+                <span class="error" v-if="errors.country">{{ errors.country }}</span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message :</label>
+                <textarea id="message" v-model="form.message" rows="5" required></textarea>
+                <span class="error" v-if="errors.message">{{ errors.message }}</span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+    </div>
 </section>
 
 <footer>
@@ -213,6 +221,7 @@
     </div>
 </footer>
 
-
+<!-- Inclusion du script JavaScript -->
+<script src="app.js"></script>
 </body>
 </html>
