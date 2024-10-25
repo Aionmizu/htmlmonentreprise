@@ -1,0 +1,344 @@
+/*General */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #366491;
+    background-color: rgba(209, 209, 209, 0.63);
+}
+
+.container{
+    margin-left : 10px;
+    margin-right : 10px;
+}
+.container_header {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Bandeau */
+
+header {
+    background: #374183;
+    color: #244c73;
+    padding: 20px 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Grille de Produit*/
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+h2 {
+    border-bottom: 3px solid #374183;
+    color: #374183;
+    display: inline-block;
+    padding-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.product-item {
+    flex-basis: calc(45% - 20px); /* Prend 50% de la largeur moins l'espace entre les éléments */
+    background: #ffffff;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item:hover {
+    color: #ffffff;
+    background: #374183;
+    transform: scale(1.05);
+}
+
+
+/* Grille notre équipe */
+.team_grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.team {
+    padding: 80px;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 20px;
+    width: 250px;
+}
+
+.team:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.PP {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+
+
+.container h3 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #374183;
+    font-weight: bold;
+}
+
+.container p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Temoignages */
+
+.Temoignages {
+    padding: 20px 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top : 50px;
+    background-color: rgba(209, 207, 207, 0.94);
+}
+
+.Temoignage {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.citation {
+    font-style: italic;
+    color: #3a4a5b;
+    font-size: 18px;
+    max-width: 70%;
+}
+
+.auteur {
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+    max-width: 30%;
+}
+
+/* Grille dernièrs articles */
+
+.article_grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.article {
+    padding: 80px;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 20px;
+    width: 250px;
+}
+
+.article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* FAQ */
+.faq {
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.faq_titre{
+    text-align: center;
+}
+
+.faq h2 {
+    border-bottom: 3px solid #374183;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.question {
+    font-weight: bold;
+    color: #366491;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.reponse {
+    font-size: 16px;
+    color: #666;
+    margin-left: 10px;
+}
+
+
+/* Gallerie Grid */
+
+.galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+}
+
+.galerie-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Effet de hover pour zoomer et centrer */
+.galerie-grid img:hover {
+    transform: scale(2);
+    z-index: 10;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* CONTACT formulaire */
+.contact-form {
+    padding: 20px; /* Un padding réduit pour un effet plus compact */
+    background-color: #e7f1fc; /* Une couleur de fond différente pour démarquer la section */
+    border: 2px solid #374183; /* Bordure autour de la section pour créer l'effet de case */
+    border-radius: 10px; /* Ajoute un léger arrondi pour les coins */
+    width: 80%; /* Ajuste la largeur pour ne pas prendre toute la page */
+    margin: 40px auto 0 auto; /* Centre le formulaire sur la page */
+}
+
+.contact-form h2 {
+    font-size: 24px; /* Taille du titre légèrement réduite */
+    color: #374183;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center; /* Centre le titre */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Réduit l'espace entre les champs pour un aspect plus compact */
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #374183;
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px; /* Un padding plus petit pour que les champs soient plus compacts */
+    border: 1px solid #374183; /* Bordure pour correspondre à la case */
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-group input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 80px; /* Hauteur ajustée pour la zone de texte */
+}
+
+.form-group button {
+    padding: 8px 15px;
+    background-color: #374183;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #2b3669;
+}
+
+
+/* FOOTER*/
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+}
+
+footer a {
+    margin: 0 10px;
+    color: #374183;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
